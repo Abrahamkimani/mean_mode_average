@@ -4,9 +4,10 @@ fn  main (){
 
    
    //let v = vec![String::from("Marks"),];
-      let mut initial_scores = vec![10, 50, 30, 60, 70];
-      initial_scores.sort();
-      let sum: i32 = initial_scores.iter().sum();
+      let mut initial_scores = vec![10.0, 50.0, 30.0, 60.0, 70.0];
+      //initial_scores.sort();
+      let sum : f32 = initial_scores.iter().sum();
+      
 
       let length = initial_scores.len();
 
@@ -40,21 +41,22 @@ fn  main (){
       let x: &i32 = &initial_scores[median];
       println!("Median for odd is {} ", x);
    }
-
-   let mut scores = HashMap::new();
+  
+   //let mut scores = HashMap::new();
   // 10, 50, 30, 60, 70
   /*the key is element of the vector and the value is the number of occurence the element appears in
   the vector*/
-  scores.insert(i32::from(10), i32::from(1)); 
-  scores.insert(i32::from(50), i32::from(1));
+  let mut scores: HashMap<&i32, i32> = HashMap::new();
+     scores.insert(&mut 10, 1); 
+ /* scores.insert(i32::from(50), i32::from(1));
   scores.insert(i32::from(30), i32::from(1));
   scores.insert(i32::from(60), i32::from(1));
-  scores.insert(i32::from(70), i32::from(1));
+  scores.insert(i32::from(70), i32::from(1));*/
 
-  for number in scores {
-   let count = scores.entry(number).or_insert(0);
-   *count += 1;
-  }
+//   for number in scores {
+//    let count = scores.entry( number).or_insert(0);
+//    *count += 1;
+//   }
 
 
   }
